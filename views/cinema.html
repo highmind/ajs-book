@@ -1,0 +1,39 @@
+<!-- 使用ng-controller设置控制器 -->
+  <!-- 路径导航开始 -->
+<ol class="breadcrumb">
+  <li><a href="index.html#/">首页</a></li>
+  <li><a href="index.html#/">电影</a></li>
+  <li class="active">影院</li>
+</ol>
+
+<!-- 手风琴 -->
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+<!-- item 开始 -->
+  <div class="panel panel-default" ng-repeat="cinema in cinemaData" >
+
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false"  aria-controls="collapseOne">
+          {{cinema.item}}
+        </a>
+
+      </h4>
+    </div>
+
+    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+        <ul class="list-group">
+            <li class="list-group-item" ng-repeat="cinemaDetail in cinema.data">
+              <a href="/index.html#/cinemaDetail/{{cinemaDetail.id}}">{{cinemaDetail.nm}}</a>
+            </li>
+        </ul>
+
+    </div>
+
+  </div>
+ <!-- item 结束 -->
+
+</div>
+<script type="text/javascript">
+  $('.collapse').collapse()
+</script>

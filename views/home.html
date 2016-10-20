@@ -1,0 +1,57 @@
+
+<div class="row">
+      <form class="search-form"  role="search" ng-submit="search()">
+        <div class="row">
+          <div class="col-md-offset-4 col-md-4 col-xs-offset-1  col-xs-8">
+            <input type="text" class="form-control" placeholder="搜索图书" ng-model="formData.name">
+          </div>
+          <div class="col-md-2 col-xs-2">
+            <button type="submit" class="btn btn-default">搜索</button>
+          </div>
+        </div>
+      </form>
+</div>
+
+<!-- 开始 -->
+<div class="book-main">
+
+
+     <div class="row book-item">
+
+      <div class="col-xs-4" >
+
+          <div class="img-box">
+            <img width="100%" ng-src="https://img1.doubanio.com/mpic/s2241708.jpg" alt="">
+          </div>
+      </div>
+
+      <div class="col-xs-8 book-info">
+        <p class="book-title">钢铁是怎样炼成的<span>平装</span></p>
+        <p class="book-author">[苏] 尼·奥斯特洛夫斯基  <span>译林出版社</span></p>
+        <p class="book-score"><span class="book-price">20</span> 评分:<span class="book-sc">8</span></p>
+      </div>
+   
+    </div>
+
+
+    <div class="row book-item" ng-repeat="book in bookArr">
+
+      <div class="col-xs-4" >
+
+          <div class="img-box">
+            <img width="100%" ng-src="{{book.image}}" alt="{{book.title}}">
+          </div>
+      </div>
+
+      <div class="col-xs-8 book-info">
+        <p class="book-title">{{book.title}} <span>{{book.binding}}</span></p>
+        <p class="book-author">{{book.author[0]}} <span>{{book.publisher}}</span></p>
+        <p class="book-score"><span class="book-price">{{book.price}}</span> 评分:<span class="book-sc">{{book.rating.average}}</span></p>
+      </div>
+   
+    </div>
+
+ 
+</div>
+
+<!-- 结束 -->

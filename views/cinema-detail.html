@@ -1,0 +1,58 @@
+<!-- 使用ng-controller设置控制器 -->
+  <!-- 路径导航开始 -->
+<ol class="breadcrumb">
+  <li><a href="index.html#/">首页</a></li>
+  <li><a href="index.html#/">电影</a></li>
+  <li class="active">影院</li>
+</ol>
+
+<div class="row">
+  <div class="col-md-2" ng-repeat="movieInfo in cinemaDetailData.movies" ng-class="{clearBoth:$index % 6 === 0}">
+    <div class="thumbnail">
+      <img ng-src="{{movieInfo.img}}" alt="">
+       <div class="caption text-center">
+          <p>{{movieInfo.nm}}</p>
+       </div>
+    </div>
+  </div>
+</div>
+<!-- 手风琴 -->
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+<!-- item 开始 -->
+  <div class="panel panel-default">
+
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false"  aria-controls="collapseOne">
+          {{cinemaDetailData.cinemaDetailModel.brd}}
+        </a>
+
+      </h4>
+    </div>
+
+    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne" ng-repeat="cinemaDete in cinemaDetes">
+       <h4>{{cinemaDete.item}}</h4>
+        <ul class="list-group" >
+         
+            <li class="list-group-item" ng-repeat="cinemaDeteData in cinemaDete.data">
+             <!--  <a href="/index.html#/cinemaMovie/{{movieInfo.id}}"> -->
+                <span>开始:{{cinemaDeteData.tm}} - 结束:{{cinemaDeteData.end}}</span>
+              
+                <span>{{cinemaDeteData.lang}} {{cinemaDeteData.tp}}</span>
+                <span>{{cinemaDeteData.th}}</span>
+              <!-- </a> -->
+            </li>
+        </ul>
+
+    </div>
+
+  </div>
+ <!-- item 结束 -->
+
+</div>
+<script type="text/javascript">
+  $(document).ready(
+   
+  );
+</script>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html  ng-app="book">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>西瓜读书</title>
+<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+<script type="text/javascript" src="/bower_components/angular/angular.min.js"></script>
+<!-- route模块需要单独安装，使用 bower install angular-route 安装 -->
+<script type="text/javascript" src="/bower_components/angular-route/angular-route.min.js"></script>
+<script src="/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+
+<style>
+    .wrap{width:100%;overflow: hidden;} /*设置宽度，针对移动端*/
+    .search-form{margin:0 auto;}
+
+    .img-box{width:100%;height:130px;overflow: hidden;}
+    .book-main{width:100%;margin:0 auto;margin-top:4px;background-color: #f2f2f2;}
+    .book-item{margin-top:6px;padding:10px;background-color: #fff;}
+    .book-title{font-size:18px;margin-top:10px;}
+    .book-score{margin-top:20px;}
+    .book-price{color:#ff463c;font-weight: bold;}
+    .book-sc{color:orange;}
+    .book-author{color:#999;}
+    
+</style>
+</head>
+
+<body>
+
+<div class="wrap">
+<!-- 头部开始 -->
+    <div class="row">
+      <h1 class="text-center">西瓜读书</h1>
+    </div>
+
+    
+<!-- 头部结束 -->
+
+    <div ng-view></div>
+
+</div>
+
+
+</body>
+</html>
