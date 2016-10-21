@@ -13,8 +13,16 @@
 </div>
 
 <!-- 开始 -->
-<div class="book-main">
+ <!-- loading 使用 ng-class 进行控制 -->
+  <div ng-class="{true: 'loading loading-show', false: 'loading-hide'}[isActive]"> 
+      <span></span> 
+      <span></span>
+      <span></span>
+      <span></span> 
+      <span></span> 
+  </div>
 
+<div class="book-main">
 
      <div class="row book-item">
 
