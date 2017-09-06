@@ -27,7 +27,7 @@
       /*搜索词不为空的时候，向接口请求数据， 启动加载动画*/
       if(!angular.isUndefined($scope.formData.name)){
           $scope.isActive = true;   /*启动loading动画*/
-          $http.jsonp("http://localhost/ajs-book/api/search.php?callback=JSON_CALLBACK&q=" + $scope.formData.name).success(function(response) {
+          $http.jsonp("http://192.168.0.123/ajs-book/api/search.php?callback=JSON_CALLBACK&q=" + $scope.formData.name).success(function(response) {
              console.log(response.books);
 
              $scope.isActive = false;   /*数据请求成功，关闭loading动画*/
